@@ -1,0 +1,8 @@
+ssc_high = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.ap-hyderabad-1.oraclecloud.com))(connect_data=(service_name=geaa991f6dcda9b_ssc_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+ssc_low = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.ap-hyderabad-1.oraclecloud.com))(connect_data=(service_name=geaa991f6dcda9b_ssc_low.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+ssc_medium = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.ap-hyderabad-1.oraclecloud.com))(connect_data=(service_name=geaa991f6dcda9b_ssc_medium.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+
+
