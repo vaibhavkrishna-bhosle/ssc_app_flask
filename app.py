@@ -1,19 +1,10 @@
-import cx_Oracle
-import os
-from flask import Flask, jsonify, render_template
-import datetime
+from sqlalchemy import create_engine
 
-os.environ['TNS_ADMIN'] = ".\Wallet_SSC"
-
-
-def get_user_logins():
-    connection = cx_Oracle.connect('admin', 'SatyamSSC@12#', 'ssc_medium')
-    cursor = connection.cursor()
-    cursor.execute('SELECT * FROM user_login')
-    result = cursor.fetchall()
-    cursor.close()
-    return result
-
-user_logins = get_user_logins()
-
-print(user_logins)
+tns = "(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.ap-hyderabad-1.oraclecloud.com))(connect_data=(service_name=geaa991f6dcda9b_ssc_medium.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))"
+engine = create_engine('oracle+cx_oracle://username:password@'+tns)
+connection = engine.raw_connection()
+cursor = connection.cursor()
+cursor.execute('SELECT * FROM user_login')
+result = cursor.fetchall()
+print(result)
+cursor.close()
