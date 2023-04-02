@@ -20,6 +20,5 @@ def login(user_name):
         return False,response
     else:
         result = cur.fetchall()
-    finally:
         cur.close()
         return True,result
