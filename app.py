@@ -12,12 +12,19 @@ import cx_Oracle
 import constants
 import json
 from waitress import serve
+import os
+# os.environ["DB_USER"]  = "ADMIN"
+# os.environ["SD_PASSWORD"]  = "SatyamSSC!!11"
+# os.environ["PORT"]  = 1522
+# os.environ["HOST"]  = "adb.ap-hyderabad-1.oraclecloud.com"
+# os.environ["SERVICE_NAME"]  = "geaa991f6dcda9b_sscapp_medium.adb.oraclecloud.com"
+
 
 
 def get_connection():
     try:
-        connect_string = f'tcps://{constants.host}:{constants.port}/{constants.service_name}?wallet_location=Wallet&retry_count=20&retry_delay=3'
-        con = cx_Oracle.connect(constants.db_user, constants.db_password, connect_string)
+        connect_string = f'tcps://{os.getenv("HOST")}:{os.getenv("PORT")}/{os.getenv("SERVICE_NAME")}?wallet_location=Wallet&retry_count=20&retry_delay=3'
+        con = cx_Oracle.connect(os.getenv("DB_USER"), os.getenv("DB_PASSWORD"), connect_string)
         cur = con.cursor()
         return True,cur
     except Exception as e:

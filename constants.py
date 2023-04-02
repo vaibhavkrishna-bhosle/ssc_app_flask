@@ -1,5 +1,5 @@
-db_user = "ADMIN"
-db_password = "SatyamSSC!!11"
-port = 1522
-host="adb.ap-hyderabad-1.oraclecloud.com"
-service_name="geaa991f6dcda9b_sscapp_medium.adb.oraclecloud.com"
+DB_USER = "ADMIN"
+SD_PASSWORD = "SatyamSSC!!11"
+PORT = 1522
+HOST = "adb.ap-hyderabad-1.oraclecloud.com"
+SERVICE_NAME = "geaa991f6dcda9b_sscapp_medium.adb.oraclecloud.com"
